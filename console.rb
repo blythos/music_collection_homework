@@ -19,7 +19,10 @@ artist3 = Artist.new(
   }
 )
 
+artist1.save()
+artist2.save()
+artist3.save()
 
 binding.pry
 
-nil 
+nil
