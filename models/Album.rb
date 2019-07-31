@@ -2,6 +2,9 @@ require_relative('../db/sql_runner.rb')
 
 class Album
 
+  attr_accessor :title, :genre
+  attr_reader :id, :artist_id
+
   def initialize(album)
     @id = album['id'].to_i if album['id']
     @title = album['title']
@@ -19,6 +22,12 @@ class Album
   def self.delete_all()
     sql = "DELETE FROM albums"
     SqlRunner.run(sql)
+  end
+
+  def self.all()
+    sql = "SELECT * FROM albums"
+    albums = SqlRunner.run(sql)
+    return albums.map { |album| Album.new(album)}
   end
 
 end
