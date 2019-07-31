@@ -36,5 +36,4 @@ class Artist
     return albums.map { |album| Album.new(album) }
   end
 
-
 end
