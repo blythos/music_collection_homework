@@ -58,8 +58,8 @@ album3.save()
 # album1.title = 'Oops I Did It Again'
 # album1.update()
 
-artist3.name = 'Madonna'
-artist3.update()
+# artist3.name = 'Madonna'
+# artist3.update()
 
 binding.pry
 
