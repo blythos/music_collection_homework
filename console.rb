@@ -1,6 +1,8 @@
 require('pry-byebug')
 require_relative('./models/Artist.rb')
 
+Artist.delete_all()
+
 artist1 = Artist.new(
   {
     'name' => 'Britney Spears'
