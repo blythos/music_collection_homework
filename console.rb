@@ -1,5 +1,6 @@
 require('pry-byebug')
 require_relative('./models/Artist.rb')
+require_relative('./models/Album.rb')
 
 Artist.delete_all()
 
@@ -24,6 +25,34 @@ artist3 = Artist.new(
 artist1.save()
 artist2.save()
 artist3.save()
+
+album1 = Album.new(
+  {
+    'title' => 'Femme Fatale',
+    'genre' => 'Pop',
+    'artist_id' => artist1.id
+  }
+)
+
+album2 = Album.new(
+  {
+    'title' => 'UNA VITA IN CAPSLOCK',
+    'genre' => 'Hip-Hop',
+    'artist_id' => artist2.id
+  }
+)
+
+album3 = Album.new(
+  {
+    'title' => 'Pussy Whipped',
+    'genre' => 'Riot Grrl',
+    'artist_id' => artist3.id
+  }
+)
+
+album1.save()
+album2.save()
+album3.save()
 
 binding.pry
 
